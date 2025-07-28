@@ -169,3 +169,147 @@ const preloadImages = () => {
 };
 
 preloadImages();
+
+// Thumbs Up Counter with GoatCounter
+document.addEventListener('DOMContentLoaded', function() {
+    const thumbsButton = document.getElementById('thumbs-button');
+    const thumbsCount = document.getElementById('thumbs-count');
+    
+    if (thumbsButton && thumbsCount) {
+        // Configuration
+        const config = {
+            baseCount: 42, // Starting count to make the site look more established
+            apiEndpoint: null, // Set this to your backend API if you implement one
+            localStorageKey: 'marvils_thumbs'
+        };
+        
+        // Check if user has already liked (using localStorage for client-side check)
+        const userData = JSON.parse(localStorage.getItem(config.localStorageKey) || '{}');
+        let hasLiked = userData.hasLiked || false;
+        let lastLikeTime = userData.lastLikeTime || null;
+        
+        // Initialize display count
+        let displayCount = userData.displayCount || config.baseCount;
+        
+        // Function to update counter display
+        const updateCounterDisplay = (count) => {
+            thumbsCount.textContent = count;
+            // Store the updated count
+            const updatedData = JSON.parse(localStorage.getItem(config.localStorageKey) || '{}');
+            updatedData.displayCount = count;
+            localStorage.setItem(config.localStorageKey, JSON.stringify(updatedData));
+        };
+        
+        // Function to fetch real count from backend (if available)
+        const fetchRealCount = async () => {
+            if (config.apiEndpoint) {
+                try {
+                    const response = await fetch(config.apiEndpoint);
+                    const data = await response.json();
+                    if (data.count && data.count > displayCount) {
+                        displayCount = data.count;
+                        updateCounterDisplay(displayCount);
+                    }
+                } catch (error) {
+                    console.log('Could not fetch real count, using local count');
+                }
+            }
+        };
+        
+        // Initialize display
+        updateCounterDisplay(displayCount);
+        
+        // Try to fetch real count on load
+        fetchRealCount();
+        
+        // Update button appearance if already liked
+        if (hasLiked) {
+            thumbsButton.style.background = 'rgba(0, 0, 0, 0.8)';
+            thumbsButton.style.color = '#fff';
+            thumbsButton.style.borderColor = '#000';
+        }
+        
+        // Handle thumbs up click
+        thumbsButton.addEventListener('click', function() {
+            const now = Date.now();
+            
+            // Check if user can like (prevent spam)
+            if (hasLiked && lastLikeTime && (now - lastLikeTime) < 86400000) { // 24 hours
+                // Already liked recently - show message
+                const originalText = thumbsButton.innerHTML;
+                thumbsButton.innerHTML = '<i class="fas fa-check" style="margin-right: 8px;"></i>Already liked!';
+                
+                setTimeout(() => {
+                    thumbsButton.innerHTML = originalText;
+                }, 1500);
+                return;
+            }
+            
+            // Send event to GoatCounter
+            if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+                goatcounter.count({
+                    path: 'thumbs-up-click',
+                    title: 'Thumbs Up Click',
+                    event: true
+                });
+            } else if (window.goatcounter) {
+                // Alternative method if goatcounter is available
+                window.goatcounter.count({
+                    path: 'thumbs-up-click',
+                    title: 'Thumbs Up Click',
+                    event: true
+                });
+            } else {
+                console.log('GoatCounter not loaded, but thumbs up recorded locally');
+            }
+            
+            // Increment display counter
+            displayCount = parseInt(displayCount) + 1;
+            updateCounterDisplay(displayCount);
+            
+            // Save user state
+            const userData = {
+                hasLiked: true,
+                lastLikeTime: now,
+                displayCount: displayCount
+            };
+            localStorage.setItem(config.localStorageKey, JSON.stringify(userData));
+            hasLiked = true;
+            lastLikeTime = now;
+            
+            // Update button appearance
+            thumbsButton.style.background = 'rgba(0, 0, 0, 0.8)';
+            thumbsButton.style.color = '#fff';
+            thumbsButton.style.borderColor = '#000';
+            thumbsButton.style.transform = 'scale(1.1)';
+            
+            // Add animation
+            setTimeout(() => {
+                thumbsButton.style.transform = 'scale(1)';
+            }, 200);
+            
+            // Show thank you message
+            const originalText = thumbsButton.innerHTML;
+            thumbsButton.innerHTML = '<i class="fas fa-heart" style="margin-right: 8px;"></i>Thanks!';
+            
+            setTimeout(() => {
+                thumbsButton.innerHTML = originalText.replace(displayCount - 1, displayCount);
+            }, 1500);
+        });
+        
+        // Track page view for additional analytics (GoatCounter does this automatically)
+        // But we can track custom events if needed
+        if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+            goatcounter.count({
+                path: 'home-page-interaction',
+                title: 'Home Page Interaction',
+                event: true
+            });
+        }
+        
+        // Optional: Periodically sync with backend (if implemented)
+        if (config.apiEndpoint) {
+            setInterval(fetchRealCount, 300000); // Check every 5 minutes
+        }
+    }
+});
