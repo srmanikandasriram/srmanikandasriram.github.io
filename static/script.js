@@ -84,24 +84,24 @@ document.querySelectorAll('.research-card, .publication-item, .credential-item')
     observer.observe(el);
 });
 
-// Typing animation for hero subtitle (optional enhancement)
-const heroSubtitle = document.querySelector('.hero-subtitle');
-if (heroSubtitle) {
-    const text = heroSubtitle.textContent;
-    heroSubtitle.textContent = '';
+// // Typing animation for hero subtitle (optional enhancement)
+// const heroSubtitle = document.querySelector('.hero-subtitle');
+// if (heroSubtitle) {
+//     const text = heroSubtitle.textContent;
+//     heroSubtitle.textContent = '';
     
-    let i = 0;
-    const typeWriter = () => {
-        if (i < text.length) {
-            heroSubtitle.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
-    };
+//     let i = 0;
+//     const typeWriter = () => {
+//         if (i < text.length) {
+//             heroSubtitle.textContent += text.charAt(i);
+//             i++;
+//             setTimeout(typeWriter, 100);
+//         }
+//     };
     
-    // Start typing animation after a short delay
-    setTimeout(typeWriter, 1000);
-}
+//     // Start typing animation after a short delay
+//     setTimeout(typeWriter, 1000);
+// }
 
 // Scroll to top functionality
 const scrollToTop = () => {
