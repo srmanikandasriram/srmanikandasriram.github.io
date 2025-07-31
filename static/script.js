@@ -1,16 +1,34 @@
-// Mobile Navigation Toggle
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
+// Navigation initialization function for modular components
+function initializeNavigation() {
+    // Mobile Navigation Toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu) {
+                navMenu.classList.remove('active');
+            }
+        });
     });
+}
+
+// Legacy initialization for non-modular pages
+document.addEventListener('DOMContentLoaded', () => {
+    // Only initialize if elements exist (non-modular pages)
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (navToggle && navMenu) {
+        initializeNavigation();
+    }
 });
 
 // Smooth scrolling for navigation links
