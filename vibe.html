@@ -1,1 +1,173 @@
-Placeholder for a visual abstract of my research statement. Stay tuned!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M·A·R·V·I·L·S - Launching Soon</title>
+    <link rel="icon" type="image/x-icon" href="static/imgs/M_logo.jpeg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+        }
+        
+        .logo {
+            width: 180px;
+            height: 180px;
+            border-radius: 12px;
+            margin: 0 auto 3rem;
+            display: block;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 8px;
+            font-weight: 300;
+            color: #222;
+        }
+        
+        .countdown-container {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .countdown-container h2 {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: #666;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .time-unit {
+            padding: 1rem 0;
+            min-width: 80px;
+        }
+        
+        .time-value {
+            font-size: 3.5rem;
+            font-weight: 200;
+            display: block;
+            line-height: 1;
+            color: #000;
+        }
+        
+        .time-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: 0.5rem;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                width: 150px;
+                height: 150px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .time-value {
+                font-size: 2rem;
+            }
+            
+            .time-unit {
+                min-width: 70px;
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="static/imgs/M_logo.jpeg" alt="MARVILS Logo" class="logo">
+        <h1>M·A·R·V·I·L·S</h1>
+        
+        <div class="countdown-container">
+            <h2>Website Launching In</h2>
+            <div class="countdown">
+                <div class="time-unit">
+                    <span class="time-value" id="days">0</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="hours">0</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="minutes">0</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="seconds">0</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set launch date to December 4, 2025 at midnight
+        const launchDate = new Date('December 4, 2025 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            // Calculate time units
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Update the display
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+
+            // If countdown is finished, redirect or show message
+            if (distance < 0) {
+                window.location.href = 'index_backup.html';
+            }
+        }
+
+        // Update countdown immediately and then every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

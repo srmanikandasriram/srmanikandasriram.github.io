@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M·A·R·V·I·L·S - Under Construction</title>
+    <title>M·A·R·V·I·L·S - Launching Soon</title>
     <link rel="icon" type="image/x-icon" href="static/imgs/M_logo.jpeg">
     <style>
         * {
@@ -13,9 +13,9 @@
         }
         
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -29,87 +29,190 @@
         }
         
         .logo {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 12px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 3rem;
             display: block;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            letter-spacing: 8px;
+            font-weight: 300;
+            color: #222;
+        }
+        
+        .countdown-container {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .countdown-container h2 {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: #666;
             letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
         }
         
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
         }
         
-        .construction {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            margin-bottom: 2rem;
+        .time-unit {
+            padding: 1rem 0;
+            min-width: 80px;
         }
         
-        .construction h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #ffd700;
+        .time-value {
+            font-size: 3.5rem;
+            font-weight: 200;
+            display: block;
+            line-height: 1;
+            color: #000;
         }
         
-        .construction p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            opacity: 0.9;
+        .time-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: 0.5rem;
+            letter-spacing: 2px;
+            font-weight: 400;
         }
-        
-        .contact {
-            margin-top: 2rem;
+
+        .social-links {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
         }
-        
-        .contact a {
-            color: #ffd700;
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: white;
+            color: #333;
             text-decoration: none;
-            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
-        
-        .contact a:hover {
-            text-decoration: underline;
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            color: #000;
         }
-        
-        .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #ffd700;
+
+        .social-links svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                width: 150px;
+                height: 150px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .time-value {
+                font-size: 2rem;
+            }
+            
+            .time-unit {
+                min-width: 70px;
+                padding: 1rem 0.5rem;
+            }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <img src="static/imgs/M_logo.jpeg" alt="MARVILS Logo" class="logo">
         <h1>M·A·R·V·I·L·S</h1>
-        <h2>Mani's Robotics, Vision and Imaging Labs</h2>
         
-        <div class="construction">
-            <div class="icon">
-                <i class="fas fa-tools"></i>
-            </div>
-            <h3>Website Under Construction</h3>
-            <p>
-                Our research group website is currently being developed. 
-                Please check back soon for updates on our research, publications, and team activities.
-            </p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/maniramanagopal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                </svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=46v2zoYAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 9a8 8 0 017.162 4.44L24 9.5z"></path>
+                </svg>
+            </a>
         </div>
         
-        <div class="contact">
-            <p>For inquiries, please contact: <a href="mailto:srmanikandasriram@gmail.com">srmanikandasriram@gmail.com</a></p>
+        <div class="countdown-container">
+            <h2>Website Launching In</h2>
+            <div class="countdown">
+                <div class="time-unit">
+                    <span class="time-value" id="days">0</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="hours">0</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="minutes">0</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="seconds">0</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        // Set launch date to December 4, 2025 at midnight
+        const launchDate = new Date('December 4, 2025 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            // Calculate time units
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Update the display
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+
+            // If countdown is finished, redirect or show message
+            if (distance < 0) {
+                window.location.href = 'index_backup.html';
+            }
+        }
+
+        // Update countdown immediately and then every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
