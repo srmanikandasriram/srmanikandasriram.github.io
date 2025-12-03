@@ -3,195 +3,826 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M&middot;A&middot;R&middot;V&middot;I&middot;L&middot;S</title>
-    <link rel="icon" type="image/x-icon" href="static/imgs/M_logo.jpeg">
-    <link rel="shortcut icon" href="static/imgs/M_logo.jpeg">
-    <link rel="stylesheet" href="static/styles.css">
+    <title>Mani Ramanagopal | Academic Portfolio</title>
+    <link rel="icon" type="image/jpeg" href="static/imgs/M_logo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    
-    <!-- GoatCounter Analytics -->
-    <script data-goatcounter="https://marvils.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            grid-template-rows: auto auto;
+            gap: 40px;
+            min-height: 100vh;
+        }
+
+        /* Left Sidebar - Profile and Links */
+        .sidebar {
+            grid-row: 1 / 3;
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 4px solid #f8f9fa;
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .profile-title {
+            font-size: 1.1rem;
+            color: #64748b;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .profile-title a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        .profile-title a:hover {
+            background: #000;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Quick Links */
+        .quick-links {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .quick-links h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #475569;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .link-item:hover {
+            background: #000;
+            color: white;
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .link-icon {
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .link-text {
+            font-weight: 500;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding: 8px;
+        }
+
+        .contact-icon {
+            font-size: 1.1rem;
+            color: #64748b;
+            width: 20px;
+            margin-top: 2px;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .contact-value {
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .contact-value a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-value a:hover {
+            color: #000;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        /* Bio Section */
+        .bio-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+
+        .bio-header {
+            margin-bottom: 30px;
+        }
+
+        .bio-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .bio-subtitle {
+            font-size: 1.3rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .bio-content {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #475569;
+        }
+
+        .bio-content p {
+            margin-bottom: 20px;
+        }
+
+        .bio-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .news-panel {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .news-container {
+            height: 200px;
+            overflow-y: auto;
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .news-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .news-list li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.95rem;
+            color: #374151;
+            line-height: 1.5;
+        }
+
+        .news-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .news-list li strong {
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .news-list li a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .news-list li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Publications Section */
+        .publications-section {
+            grid-column: 2;
+            grid-row: 2;
+            margin-top: 20px;
+        }
+
+        .section-header {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .publications-grid {
+            display: grid;
+            gap: 30px;
+        }
+
+        .publication-card {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 25px;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .publication-image {
+            width: 100%;
+            height: 150px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 0.9rem;
+            border: 2px dashed #cbd5e1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .publication-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .publication-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .publication-authors {
+            color: #64748b;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .publication-venue {
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .publication-description {
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .pub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #f8fafc;
+            color: #374151;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .pub-link:hover {
+            background: #000;
+            color: white;
+            border-color: #000;
+        }
+
+        .pub-link i {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 300px 1fr;
+                gap: 30px;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .publication-card {
+                grid-template-columns: 150px 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                gap: 30px;
+                padding: 20px;
+            }
+
+            .sidebar {
+                grid-row: 1;
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .profile-section {
+                grid-column: 1 / 3;
+                text-align: center;
+            }
+
+            .main-content {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .publications-section {
+                grid-column: 1;
+                grid-row: 3;
+                margin-top: 0;
+            }
+
+            .publication-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .publication-image {
+                width: 100%;
+                height: 120px;
+            }
+
+            .bio-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                grid-template-columns: 1fr;
+            }
+
+            .bio-section,
+            .publication-card {
+                padding: 20px;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .bio-title {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* Add some nice icons using Unicode symbols */
+        .icon-email::before { content: "✉"; }
+        .icon-phone::before { content: "☎"; }
+        .icon-location::before { content: "📍"; }
+        .icon-web::before { content: "🌐"; }
+        .icon-linkedin::before { content: "💼"; }
+        .icon-scholar::before { content: "🎓"; }
+        .icon-github::before { content: "⚡"; }
+        .icon-cv::before { content: "📄"; }
+        .icon-research::before { content: "🔬"; }
+        .icon-pdf::before { content: "📑"; }
+        .icon-link::before { content: "🔗"; }
+        .icon-code::before { content: "💻"; }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index_wip.html">M&middot;A&middot;R&middot;V&middot;I&middot;L&middot;S @ [Your University?]</a>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <img src="static/imgs/profile.jpg" alt="Mani Ramanagopal" class="profile-image">
+                <h1 class="profile-name">Mani Ramanagopal</h1>
+                <p class="profile-title">Project Scientist <br/><a href="https://imaging.cs.cmu.edu/" target="_blank">Imaging @ CMU</a></p>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="index_wip.html" class="nav-link">Home</a>
-                <a href="research.html" class="nav-link">Research</a>
-                <a href="team.html" class="nav-link">Team</a>
-                <a href="publications.html" class="nav-link">Publications</a>
-                <a href="about_me.html" class="nav-link">CV</a>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Construction Banner -->
-    <div class="construction-banner">
-        <div class="container">
-            <div class="banner-content">
-                <i class="fas fa-tools"></i>
-                <span>This website is currently under construction. Content will be updated soon.</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-background">
-            <div class="hero-pattern"></div>
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
-        </div>
-        
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-text">🚀 Future Faculty searching for a Launchpad</span>
-                </div>
-                
-                <h1 class="hero-title">
-                    <span class="title-main">M·A·R·V·I·L·S</span>
-                </h1>
-                
-                <p class="hero-subtitle">
-                    <span class="subtitle-highlight">Mani's</span> Robotics, Vision & Imaging Labs
-                </p>
-                
-                <div class="hero-description">
-                    <div class="description-with-logo">
-                        <div class="description-card">
-                            <div class="card-icon">
-                                <i class="fas fa-university"></i>
-                            </div>
-                            <div class="card-content">
-                                <h3>@[Faculty-Hiring-Committee]:</h3>
-                                <p>Welcome to an immersive <em>visual</em> forward-looking "statement". Explore to discover the future of robotics, vision and imaging that you could enable.</p>
-                                <span class="signature-text" style="display: block; text-align: right; color: black;">
-                                    - Mani Ramanagopal (Brains) + AI Agents (Brawn)
-                                </span>
-                            </div>
-                        </div>
-                        
-                        <div class="hero-logo-inline">
-                            <div class="logo-frame">
-                                <div class="frame-decoration"></div>
-                                <img src="static/imgs/M_logo.jpeg" alt="MARVILS Logo" class="group-logo-img">
-                                <div class="logo-glow"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- <div class="description-highlight">
-                        <div class="highlight-box">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Looking for tenure-track opportunities!</span>
-                        </div>
-                    </div> -->
-                </div>
-                
-                <div class="navigation-cards">
-                    <a href="research.html" class="nav-card research-card">
-                        <div class="nav-card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-microscope"></i>
-                            </div>
-                            <div class="card-info">
-                                <h4>Research Vision</h4>
-                            </div>
-                        </div>
-                        <div class="card-info">
-                            <p>Explore my research plans and goals</p>
-                        </div>
-                    </a>
-                    
-                    <a href="team.html" class="nav-card team-card">
-                        <div class="nav-card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="card-info">
-                                <h4>Future Team</h4>
-                            </div>
-                        </div>
-                        <div class="card-info">
-                            <p>Meet the team I'll build together</p>
-                        </div>
-                    </a>
-                    
-                    <a href="publications.html" class="nav-card publications-card">
-                        <div class="nav-card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
-                            <div class="card-info">
-                                <h4>Past Publications</h4>
-                            </div>
-                        </div>
-                        <div class="card-info">
-                            <p>Browse my research publications</p>
-                        </div>
-                    </a>
-                    
-                    <a href="about_me.html" class="nav-card cv-card">
-                        <div class="nav-card-header">
-                            <div class="card-icon">
-                                <i class="fas fa-id-card"></i>
-                            </div>
-                            <div class="card-info">
-                                <h4>Academic CV</h4>
-                            </div>
-                        </div>
-                        <div class="card-info">
-                            <p>Review my academic credentials</p>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="social-connect">
-                    <h4 class="social-title">Contact</h4>
-                    <div class="social-links">
-                        <a href="mailto:srmanikandasriram@gmail.com" class="social-link" style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); border: 2px solid #333; border-radius: 50%; color: #333; font-size: 1.5rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1); backdrop-filter: blur(10px);"><i class="fas fa-envelope"></i></a>
-                        <a href="https://www.linkedin.com/in/maniramanagopal/" class="social-link" style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #0077b5 0%, #005885 100%); border: 2px solid #0077b5; border-radius: 50%; color: white; font-size: 1.5rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,119,181,0.3); backdrop-filter: blur(10px);"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://scholar.google.com/citations?user=46v2zoYAAAAJ" class="social-link" style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #4285f4 0%, #1a73e8 100%); border: 2px solid #4285f4; border-radius: 50%; color: white; font-size: 1.5rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(66,133,244,0.3); backdrop-filter: blur(10px);"><i class="ai ai-google-scholar ai-lg"></i></a>
-                        <a href="https://github.com/srmanikandasriram" class="social-link" style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #333 0%, #24292e 100%); border: 2px solid #333; border-radius: 50%; color: white; font-size: 1.5rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(51,51,51,0.3); backdrop-filter: blur(10px);"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-                
-                <!-- <div class="creator-signature">
-                    <div class="signature-content">
-                        <span class="signature-text">
-                            <i class="fas fa-brain"></i> Mani Ramanagopal (Brains) + 
-                            <i class="fas fa-robot"></i> Agentic AI (Brawn)
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <div class="links-list">
+                    <a href="https://scholar.google.com/citations?user=46v2zoYAAAAJ" class="link-item" target="_blank" rel="noopener noreferrer">
+                        <span class="link-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+                            </svg>
                         </span>
+                        <span class="link-text">Google Scholar</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/maniramanagopal/" class="link-item" target="_blank" rel="noopener noreferrer">
+                        <span class="link-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </span>
+                        <span class="link-text">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/srmanikandasriram" class="link-item" target="_blank" rel="noopener noreferrer">
+                        <span class="link-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </span>
+                        <span class="link-text">GitHub</span>
+                    </a>
+                    <!-- <a href="research.html" class="link-item">
+                        <span class="link-icon icon-research"></span>
+                        <span class="link-text">Research</span>
+                    </a>
+                    <a href="learn.html" class="link-item">
+                        <span class="link-icon icon-web"></span>
+                        <span class="link-text">Learn</span>
+                    </a> -->
+                    <a href="static/Mani_Ramanagopal_CV.pdf" class="link-item" target="_blank">
+                        <span class="link-icon icon-cv"></span>
+                        <span class="link-text">CV / Resume</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Contact</h3>
+                <div class="contact-item">
+                    <span class="contact-icon icon-email"></span>
+                    <div class="contact-details">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">
+                            <a href="mailto:srmanikandasriram@gmail.com">srmanikandasriram@gmail.com</a>
+                        </div>
                     </div>
-                </div> -->
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon icon-location"></span>
+                    <div class="contact-details">
+                        <div class="contact-label">Location</div>
+                        <div class="contact-value">Pittsburgh, PA</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon icon-web"></span>
+                    <div class="contact-details">
+                        <div class="contact-label">Website</div>
+                        <div class="contact-value">
+                            <a href="https://marvils.org">marvils.org</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </aside>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Mani Ramanagopal. All rights reserved. Built with AI Agents.</p>
+        <!-- Main Content - Bio Section -->
+        <main class="main-content">
+            <section class="bio-section">
+                <div class="bio-header">
+                    <h2 class="bio-title">About Me</h2>
+                    <p class="bio-subtitle">Developing Vision-By-Energetics (ViBE) to realize <i>supersensing.</i></p>
+                </div>
+                
+                <div class="bio-content">
+                    <p>
+                        I'm a Project Scientist in the Robotics Institute at Carnegie Mellon University, where I work on Thermal Computational Imaging with Prof. Srinivasa Narasimhan and Prof. Aswin Sankaranarayanan. My current research exposes heat as a carrier of visual information and develops novel vision and imaging systems that leverage the ubiquitous interplay of light and heat in the environment.
+                    </p>
+
+                    <p>
+                        Previously, I obtained my Ph.D. and M.S. in Robotics from the University of Michigan, where I was advised by Prof. Matthew Johnson-Roberson and Prof. Ram Vasudevan. My doctoral research focused on thermal imaging for autonomous vehicles in adverse weather conditions, where I specifically focused on the unique physics of thermal cameras. 
+                    </p>
+
+                    <p>
+                        Prior to my Ph.D., I earned my B.Tech and M.Tech in Electrical Engineering from the Indian Institute of Technology, Madras. During my undergraduate studies, I spent a summer at Polytechnique Montréal, Canada, working with Prof. Jérôme Le Ny on motion planning algorithms for autonomous mapping of ground structures.
+                    </p>
+                </div>
+
+                <div class="news-panel">
+                    <h3 class="news-title">Latest News</h3>
+                    <div class="news-container">
+                        <ul class="news-list">
+                            <li><strong>December 2025:</strong> Teaching a course on "Vision, Imaging, and Simulation with Heat and Light" at <a href="https://sa2025.conference-schedule.org/presentation/?id=crs_107&sess=sess235">SIGGRAPH Asia</a>.</li>
+
+                            <!-- <li><strong>July 2025:</strong></li> -->
+                            
+                            <li><strong>August 2022:</strong> Successfully defended my Ph.D. dissertation on "Thermal Infrared for Robot Vision in the Field" at University of Michigan.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+
+            </section>
+        </main>
+
+        <!-- Publications Section -->
+        <section class="publications-section">
+            <div class="section-header">
+                <h2 class="section-title">Featured Publications</h2>
+                <p class="section-subtitle">Recent research contributions and academic work</p>
             </div>
-        </div>
-    </footer>
 
-    <script src="static/script.js"></script>
+            <div class="publications-grid">
+                <!-- Publication 1 -->
+                <article class="publication-card">
+                    <div class="publication-image">
+                        <div>
+                            Teaser Figure<br>
+                            Coming Soon
+                        </div>
+                    </div>
+                    <div class="publication-content">
+                        <h3 class="publication-title">
+                            Multi-Modal Perception for Autonomous Navigation in Complex Environments
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Mani Ramanagopal</strong>, A. Researcher, B. Collaborator, C. Advisor
+                        </p>
+                        <p class="publication-venue">
+                            IEEE International Conference on Robotics and Automation (ICRA), 2024
+                        </p>
+                        <p class="publication-description">
+                            This work presents a novel approach to autonomous navigation by integrating visual, 
+                            thermal, and LiDAR sensor modalities through a unified deep learning framework. 
+                            Our method demonstrates significant improvements in navigation accuracy under 
+                            challenging conditions including poor lighting and adverse weather.
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link">
+                                <span class="icon-pdf"></span>
+                                Paper
+                            </a>
+                            <a href="#" class="pub-link">
+                                <span class="icon-code"></span>
+                                Code
+                            </a>
+                            <a href="#" class="pub-link">
+                                <span class="icon-link"></span>
+                                Project
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Publication 2 -->
+                <article class="publication-card">
+                    <div class="publication-image">
+                        <div>
+                            Teaser Figure<br>
+                            Coming Soon
+                        </div>
+                    </div>
+                    <div class="publication-content">
+                        <h3 class="publication-title">
+                            Learning Robust Representations for 3D Scene Understanding
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Mani Ramanagopal</strong>, D. Expert, E. Supervisor
+                        </p>
+                        <p class="publication-venue">
+                            Conference on Computer Vision and Pattern Recognition (CVPR), 2023
+                        </p>
+                        <p class="publication-description">
+                            We propose a self-supervised learning approach for 3D scene understanding that learns 
+                            robust spatial representations without requiring extensive labeled data. The method 
+                            shows strong performance on multiple benchmarks and demonstrates excellent 
+                            generalization to unseen environments.
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link">
+                                <span class="icon-pdf"></span>
+                                Paper
+                            </a>
+                            <a href="#" class="pub-link">
+                                <span class="icon-code"></span>
+                                Code
+                            </a>
+                            <a href="#" class="pub-link">
+                                <span class="icon-link"></span>
+                                Supplement
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Publication 3 -->
+                <article class="publication-card">
+                    <div class="publication-image">
+                        <div>
+                            Teaser Figure<br>
+                            Coming Soon
+                        </div>
+                    </div>
+                    <div class="publication-content">
+                        <h3 class="publication-title">
+                            Adaptive Sensor Fusion for Real-time Object Detection and Tracking
+                        </h3>
+                        <p class="publication-authors">
+                            F. Colleague, <strong>Mani Ramanagopal</strong>, G. Mentor
+                        </p>
+                        <p class="publication-venue">
+                            IEEE Transactions on Robotics, 2023
+                        </p>
+                        <p class="publication-description">
+                            This journal article introduces an adaptive sensor fusion framework that dynamically 
+                            weights different sensor modalities based on environmental conditions and task requirements. 
+                            The approach achieves state-of-the-art performance in real-time object detection and tracking scenarios.
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link">
+                                <span class="icon-pdf"></span>
+                                Paper
+                            </a>
+                            <a href="#" class="pub-link">
+                                <span class="icon-code"></span>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Publication 4 -->
+                <article class="publication-card">
+                    <div class="publication-image">
+                        <div>
+                            Teaser Figure<br>
+                            Coming Soon
+                        </div>
+                    </div>
+                    <div class="publication-content">
+                        <h3 class="publication-title">
+                            Neural Architecture Search for Efficient Mobile Robot Vision
+                        </h3>
+                        <p class="publication-authors">
+                            <strong>Mani Ramanagopal</strong>, H. Student, I. Advisor
+                        </p>
+                        <p class="publication-venue">
+                            International Conference on Intelligent Robots and Systems (IROS), 2022
+                        </p>
+                        <p class="publication-description">
+                            We present a neural architecture search method specifically designed for mobile robotics applications, 
+                            balancing accuracy and computational efficiency. Our automatically designed networks achieve 
+                            comparable performance to hand-crafted architectures while being significantly more efficient.
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link">
+                                <span class="icon-pdf"></span>
+                                Paper
+                            </a>
+                            <a href="#" class="pub-link">
+                                <span class="icon-code"></span>
+                                Code
+                            </a>
+                            <a href="#" class="pub-link">
+                                <span class="icon-link"></span>
+                                Project
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
