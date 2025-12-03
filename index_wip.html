@@ -311,8 +311,160 @@
             margin-top: 20px;
         }
 
+        /* Category sections */
+        .category-section {
+            margin-bottom: 50px;
+        }
+
+        .category-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-tag {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .category-description {
+            color: #64748b;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .toggle-btn {
+            padding: 10px 20px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            background: #e2e8f0;
+            color: #374151;
+        }
+
+        .toggle-btn.active {
+            background: #000;
+            color: white;
+            border-color: #000;
+        }
+
+        /* View states */
+        .categorized-view .publications-grid {
+            display: none;
+        }
+
+        .categorized-view .category-sections {
+            display: block;
+        }
+
+        .all-view .publications-grid {
+            display: grid;
+        }
+
+        .all-view .category-sections {
+            display: none;
+        }
+
+        .category-sections {
+            display: block;
+        }
+
         .section-header {
             margin-bottom: 30px;
+        }
+
+        /* Publication Filter Buttons */
+        .publication-filters {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: #e2e8f0;
+            color: #374151;
+        }
+
+        .filter-btn.active {
+            background: #000;
+            color: white;
+            border-color: #000;
+        }
+
+        /* Publication Tags */
+        .publication-tags {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .publication-tag {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .tag-theory {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .tag-measurements {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .tag-inference {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+
+        /* Hidden publications */
+        .publication-card.hidden {
+            display: none;
         }
 
         .section-title {
@@ -570,6 +722,10 @@
                         </span>
                         <span class="link-text">GitHub</span>
                     </a>
+                    <!-- <a href="publications.html" class="link-item">
+                        <span class="link-icon icon-research"></span>
+                        <span class="link-text">Publications</span>
+                    </a> -->
                     <!-- <a href="research.html" class="link-item">
                         <span class="link-icon icon-research"></span>
                         <span class="link-text">Research</span>
@@ -642,7 +798,7 @@
                     <h3 class="news-title">Latest News</h3>
                     <div class="news-container">
                         <ul class="news-list">
-                            <li><strong>December 2025:</strong> Teaching a course on "Vision, Imaging, and Simulation with Heat and Light" at <a href="https://sa2025.conference-schedule.org/presentation/?id=crs_107&sess=sess235">SIGGRAPH Asia</a>.</li>
+                            <li><strong>December 2025:</strong> Mani is teaching a course on "Vision, Imaging, and Simulation with Heat and Light" at <a href="https://sa2025.conference-schedule.org/presentation/?id=crs_107&sess=sess235">SIGGRAPH Asia</a>.</li>
 
                             <!-- <li><strong>July 2025:</strong></li> -->
                             
@@ -651,178 +807,32 @@
                         </ul>
                     </div>
                 </div>
-
-
             </section>
         </main>
 
-        <!-- Publications Section -->
-        <section class="publications-section">
-            <div class="section-header">
-                <h2 class="section-title">Featured Publications</h2>
-                <p class="section-subtitle">Recent research contributions and academic work</p>
-            </div>
-
-            <div class="publications-grid">
-                <!-- Publication 1 -->
-                <article class="publication-card">
-                    <div class="publication-image">
-                        <div>
-                            Teaser Figure<br>
-                            Coming Soon
-                        </div>
-                    </div>
-                    <div class="publication-content">
-                        <h3 class="publication-title">
-                            Multi-Modal Perception for Autonomous Navigation in Complex Environments
-                        </h3>
-                        <p class="publication-authors">
-                            <strong>Mani Ramanagopal</strong>, A. Researcher, B. Collaborator, C. Advisor
-                        </p>
-                        <p class="publication-venue">
-                            IEEE International Conference on Robotics and Automation (ICRA), 2024
-                        </p>
-                        <p class="publication-description">
-                            This work presents a novel approach to autonomous navigation by integrating visual, 
-                            thermal, and LiDAR sensor modalities through a unified deep learning framework. 
-                            Our method demonstrates significant improvements in navigation accuracy under 
-                            challenging conditions including poor lighting and adverse weather.
-                        </p>
-                        <div class="publication-links">
-                            <a href="#" class="pub-link">
-                                <span class="icon-pdf"></span>
-                                Paper
-                            </a>
-                            <a href="#" class="pub-link">
-                                <span class="icon-code"></span>
-                                Code
-                            </a>
-                            <a href="#" class="pub-link">
-                                <span class="icon-link"></span>
-                                Project
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Publication 2 -->
-                <article class="publication-card">
-                    <div class="publication-image">
-                        <div>
-                            Teaser Figure<br>
-                            Coming Soon
-                        </div>
-                    </div>
-                    <div class="publication-content">
-                        <h3 class="publication-title">
-                            Learning Robust Representations for 3D Scene Understanding
-                        </h3>
-                        <p class="publication-authors">
-                            <strong>Mani Ramanagopal</strong>, D. Expert, E. Supervisor
-                        </p>
-                        <p class="publication-venue">
-                            Conference on Computer Vision and Pattern Recognition (CVPR), 2023
-                        </p>
-                        <p class="publication-description">
-                            We propose a self-supervised learning approach for 3D scene understanding that learns 
-                            robust spatial representations without requiring extensive labeled data. The method 
-                            shows strong performance on multiple benchmarks and demonstrates excellent 
-                            generalization to unseen environments.
-                        </p>
-                        <div class="publication-links">
-                            <a href="#" class="pub-link">
-                                <span class="icon-pdf"></span>
-                                Paper
-                            </a>
-                            <a href="#" class="pub-link">
-                                <span class="icon-code"></span>
-                                Code
-                            </a>
-                            <a href="#" class="pub-link">
-                                <span class="icon-link"></span>
-                                Supplement
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Publication 3 -->
-                <article class="publication-card">
-                    <div class="publication-image">
-                        <div>
-                            Teaser Figure<br>
-                            Coming Soon
-                        </div>
-                    </div>
-                    <div class="publication-content">
-                        <h3 class="publication-title">
-                            Adaptive Sensor Fusion for Real-time Object Detection and Tracking
-                        </h3>
-                        <p class="publication-authors">
-                            F. Colleague, <strong>Mani Ramanagopal</strong>, G. Mentor
-                        </p>
-                        <p class="publication-venue">
-                            IEEE Transactions on Robotics, 2023
-                        </p>
-                        <p class="publication-description">
-                            This journal article introduces an adaptive sensor fusion framework that dynamically 
-                            weights different sensor modalities based on environmental conditions and task requirements. 
-                            The approach achieves state-of-the-art performance in real-time object detection and tracking scenarios.
-                        </p>
-                        <div class="publication-links">
-                            <a href="#" class="pub-link">
-                                <span class="icon-pdf"></span>
-                                Paper
-                            </a>
-                            <a href="#" class="pub-link">
-                                <span class="icon-code"></span>
-                                Code
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Publication 4 -->
-                <article class="publication-card">
-                    <div class="publication-image">
-                        <div>
-                            Teaser Figure<br>
-                            Coming Soon
-                        </div>
-                    </div>
-                    <div class="publication-content">
-                        <h3 class="publication-title">
-                            Neural Architecture Search for Efficient Mobile Robot Vision
-                        </h3>
-                        <p class="publication-authors">
-                            <strong>Mani Ramanagopal</strong>, H. Student, I. Advisor
-                        </p>
-                        <p class="publication-venue">
-                            International Conference on Intelligent Robots and Systems (IROS), 2022
-                        </p>
-                        <p class="publication-description">
-                            We present a neural architecture search method specifically designed for mobile robotics applications, 
-                            balancing accuracy and computational efficiency. Our automatically designed networks achieve 
-                            comparable performance to hand-crafted architectures while being significantly more efficient.
-                        </p>
-                        <div class="publication-links">
-                            <a href="#" class="pub-link">
-                                <span class="icon-pdf"></span>
-                                Paper
-                            </a>
-                            <a href="#" class="pub-link">
-                                <span class="icon-code"></span>
-                                Code
-                            </a>
-                            <a href="#" class="pub-link">
-                                <span class="icon-link"></span>
-                                Project
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
     </div>
+
+    <script>
+        // View toggle and publication filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButtons = document.querySelectorAll('.toggle-btn');
+            const publicationsSection = document.querySelector('.publications-section');
+
+            // View toggle functionality
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const view = this.getAttribute('data-view');
+                    
+                    // Update active button
+                    toggleButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update view class
+                    publicationsSection.classList.remove('categorized-view', 'all-view');
+                    publicationsSection.classList.add(view + '-view');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
