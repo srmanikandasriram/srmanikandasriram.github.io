@@ -275,6 +275,17 @@
             line-height: 1.2;
         }
 
+        .profile-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
         .nav-description {
             display: none;
         }
@@ -297,11 +308,12 @@
 
             .nav-section {
                 gap: 25px;
+                max-width: 340px;
             }
 
             .nav-card {
-                width: 130px;
-                height: 130px;
+                width: 140px;
+                height: 140px;
                 padding: 15px;
             }
 
@@ -397,9 +409,7 @@
         <!-- Navigation Links -->
         <nav class="nav-section">
             <a href="mani.html" class="nav-card">
-                <div class="nav-icon"></div>
-                <h3 class="nav-title">Mani's Profile</h3>
-                <!-- <p class="nav-description">Learn about my research background and academic journey</p> -->
+                <img src="static/imgs/profile.jpg" alt="Mani's Profile" class="profile-img">
             </a>
 
             <a href="vibe.html" class="nav-card">
