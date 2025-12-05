@@ -181,6 +181,123 @@
             line-height: 1.8;
         }
 
+        /* Publications Section */
+        .publications-section {
+            margin-top: 40px;
+        }
+
+        .year-group {
+            margin-bottom: 40px;
+        }
+
+        .year-heading {
+            font-size: 1.5rem;
+            color: #1e293b;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .publication-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .publication-card:hover {
+            background: #f1f5f9;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .pub-thumbnail {
+            flex-shrink: 0;
+            width: 200px;
+            height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+            background: white;
+            border: 1px solid #e2e8f0;
+        }
+
+        .pub-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .pub-title a {
+            color: #1e293b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .pub-title a:hover {
+            color: #667eea;
+        }
+
+        .pub-authors {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 6px;
+        }
+
+        .pub-authors .author-me {
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .pub-venue {
+            font-size: 0.9rem;
+            color: #475569;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .pub-links {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        .pub-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #475569;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .pub-links a:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .pub-links a i {
+            font-size: 14px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -226,6 +343,19 @@
 
             .quick-links {
                 justify-content: center;
+            }
+
+            .publication-card {
+                flex-direction: column;
+            }
+
+            .pub-thumbnail {
+                width: 100%;
+                height: 200px;
+            }
+
+            .pub-links {
+                flex-wrap: wrap;
             }
         }
 
@@ -285,7 +415,6 @@
                 <img src="static/imgs/profile.jpg" alt="Mani's Profile" class="profile-img">
                 <div class="profile-info">
                     <h1>Mani Ramanagopal</h1>
-                    <!-- <p class="subtitle"> Imaging @ CMU</p> -->
                     <div class="quick-links">
                         <a href="https://www.linkedin.com/in/maniramanagopal/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                             <i class="fab fa-linkedin"></i>
@@ -297,14 +426,15 @@
                             <i class="fas fa-envelope"></i>
                         </a>
                         <a href="static/Mani_Ramanagopal_CV.pdf" target="_blank" rel="noopener noreferrer" title="Open CV">
-                            <i class="fas fa-file-pdf"></i>
+                            <!-- <i class="fas fa-file"></i> -->
+                             CV
                         </a>
                     </div>
                 </div>
             </div>
 
             <p>
-                I'm a project scientist at <a href="https://imaging.cs.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a>, working with <a href="https://www.cs.cmu.edu/~srinivas/" target="_blank" rel="noopener noreferrer">Prof. Srinivasa Narasimhan</a> and <a href="https://www.cs.cmu.edu/~saswin/" target="_blank" rel="noopener noreferrer">Prof. Aswin Sankaranarayanan</a>. My research explores heat as a carrier of <i>visual information</i>. I develop novel vision and imaging systems that leverage the ubiquitous interplay of light and heat all around us.
+                I'm a project scientist at <a href="https://imaging.cs.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a>, working with <a href="https://www.cs.cmu.edu/~srinivas/" target="_blank" rel="noopener noreferrer">Prof. Srinivasa Narasimhan</a> and <a href="https://www.ece.cmu.edu/directory/bios/sankaranarayanan-aswin.html" target="_blank" rel="noopener noreferrer">Prof. Aswin Sankaranarayanan</a>. My research explores heat as a carrier of <i>visual information</i>. I develop novel vision and imaging systems that leverage the ubiquitous interplay of light and heat all around us.
             </p>
 
             <p>
@@ -312,13 +442,390 @@
             </p>
 
             <p>
-                Prior to my Ph.D., I earned my B.Tech and M.Tech in Electrical Engineering from the <a href="https://www.iitm.ac.in/" target="_blank" rel="noopener noreferrer">Indian Institute of Technology, Madras</a>. During my undergraduate studies, I spent a summer at <a href="https://www.polymtl.ca/" target="_blank" rel="noopener noreferrer">Polytechnique Montréal, Canada</a>, working with <a href="https://www.professeurs.polymtl.ca/jerome.le-ny/" target="_blank" rel="noopener noreferrer">Prof. Jérôme Le Ny</a> on motion planning algorithms for autonomous mapping of ground structures, through the <a href="https://www.mitacs.ca/our-programs/globalink-research-internship-students/" target="_blank" rel="noopener noreferrer">Mitacs Globalink Research Internship</a>.
+                Prior to my Ph.D., I earned my B.Tech and M.Tech in Electrical Engineering from the <a href="https://www.iitm.ac.in/" target="_blank" rel="noopener noreferrer">Indian Institute of Technology, Madras</a>. During my undergraduate studies, I spent a summer at <a href="https://www.polymtl.ca/" target="_blank" rel="noopener noreferrer">Polytechnique Montréal, Canada</a>, working with <a href="https://www.professeurs.polymtl.ca/jerome.le-ny/" target="_blank" rel="noopener noreferrer">Prof. Jerome Le Ny</a> on motion planning algorithms for autonomous mapping of ground structures, through the <a href="https://www.mitacs.ca/our-programs/globalink-research-internship-students/" target="_blank" rel="noopener noreferrer">Mitacs Globalink Research Internship</a>.
             </p>
-            <!-- <h2>Publications</h2>
-            <p>
-                Describe your research interests and areas of focus.
-            </p> -->
 
+            <h2>Publications</h2>
+
+            <div class="publications-section">
+                <!-- 2025 Publications -->
+                <div class="year-group">
+                    <h3 class="year-heading">2025</h3>
+                    
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2025_sigasia_course_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://dl.acm.org/doi/10.1145/3757371.3763255" target="_blank">Vision, Imaging, and Simulation for Heat and Light</a>
+                            </div>
+                            <div class="pub-authors">
+                                <span class="author-me">Mani Ramanagopal</span>, Bailey Miller
+                            </div>
+                            <div class="pub-venue">
+                                SIGGRAPH Asia 2025 Course
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://dl.acm.org/doi/10.1145/3757371.3763255" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <!-- <a href="#" target="_blank"><i class="fas fa-globe"></i> Webpage</a> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2025_dual_band_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://arxiv.org/pdf/2509.11334" target="_blank">Dual Band Video Thermography Near Ambient Conditions</a>
+                            </div>
+                            <div class="pub-authors">
+                                Sriram Narayanan, <span class="author-me">Mani Ramanagopal</span>, Srinivasa G. Narasimhan
+                            </div>
+                            <div class="pub-venue">
+                                arXiv preprint, 2025
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2509.11334" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <!-- <a href="#" target="_blank"><i class="fas fa-globe"></i> Project</a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2025_ordinality_teaser_img.png" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://arxiv.org/pdf/2509.10388" target="_blank">Physics-Based Decomposition of Reflectance and Shading using a Single Visible-Thermal Image Pair</a>
+                            </div>
+                            <div class="pub-authors">
+                                Zeqing Leo Yuan, <span class="author-me">Mani Ramanagopal</span>, Aswin C. Sankaranarayanan, Srinivasa G. Narasimhan
+                            </div>
+                            <div class="pub-venue">
+                                arXiv preprint, 2025
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2509.10388" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <!-- <a href="#" target="_blank"><i class="fas fa-globe"></i> Project</a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2025_resolving_iccp_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://imaging.cs.cmu.edu/shape_from_laplacian_and_shading/" target="_blank">Resolving Shape Ambiguities using Heat Conduction and Shading</a>
+                            </div>
+                            <div class="pub-authors">
+                                Akihiko Oharazawa, Sriram Narayanan, <span class="author-me">Mani Ramanagopal</span>, Srinivasa G. Narasimhan
+                            </div>
+                            <div class="pub-venue">
+                                IEEE International Conference on Computational Photography (ICCP), 2025
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://imaging.cs.cmu.edu/shape_from_laplacian_and_shading/static/files/shape_from_laplacian_and_shading_ICCP2025.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <a href="https://imaging.cs.cmu.edu/shape_from_laplacian_and_shading/" target="_blank"><i class="fas fa-globe"></i> Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2025_rtx_net_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://arxiv.org/pdf/2505.24705" target="_blank">RT-X Net: RGB-Thermal cross attention network for Low-Light Image Enhancement</a>
+                            </div>
+                            <div class="pub-authors">
+                                Raman Jha, Aditya Lenka, <span class="author-me">Mani Ramanagopal</span>, Aswin C. Sankaranarayanan, Kaushik Mitra
+                            </div>
+                            <div class="pub-venue">
+                                IEEE Conference on Image Processing (ICIP), 2025
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2505.24705" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <!-- <a href="#" target="_blank"><i class="fas fa-globe"></i> Project</a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2025_dataset_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://umautobots.github.io/nsavp" target="_blank">Dataset and benchmark: Novel sensors for autonomous vehicle perception</a>
+                            </div>
+                            <div class="pub-authors">
+                                Spencer Carmichael, Austin Buchan, <span class="author-me">Mani Ramanagopal</span>, Radhika Ravi, Ram Vasudevan, Katherine A. Skinner
+                            </div>
+                            <div class="pub-venue">
+                                The International Journal of Robotics Research (IJRR), 2025
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2401.13853" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <a href="https://umautobots.github.io/nsavp" target="_blank"><i class="fas fa-globe"></i> Webpage</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2025_trnerf_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://umautobots.github.io/trnerf" target="_blank">TRNeRF: Restoring Blurry, Rolling Shutter, and Noisy Thermal Images with Neural Radiance Fields</a>
+                            </div>
+                            <div class="pub-authors">
+                                Spencer Carmichael, Manohar Bhat, <span class="author-me">Mani Ramanagopal</span>, Austin Buchan, Ram Vasudevan, Katherine A Skinner
+                            </div>
+                            <div class="pub-venue">
+                                2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Carmichael_TRNeRF_Restoring_Blurry_Rolling_Shutter_and_Noisy_Thermal_Images_with_WACV_2025_paper.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <a href="https://umautobots.github.io/trnerf" target="_blank"><i class="fas fa-globe"></i> Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 Publications -->
+                <div class="year-group">
+                    <h3 class="year-heading">2024</h3>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2024_shape_from_heat_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://www.cs.cmu.edu/~ILIM/shape_from_heat/" target="_blank">Shape from heat conduction</a>
+                            </div>
+                            <div class="pub-authors">
+                                Sriram Narayanan, Mani Ramanagopal, Mark Sheinin, Aswin C Sankaranarayanan, Srinivasa G Narasimhan
+                            </div>
+                            <div class="pub-venue">
+                                European Conference on Computer Vision (ECCV), 2025
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://www.cs.cmu.edu/~ILIM/shape_from_heat/static/pdfs/shape_from_heat_conduction.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <a href="https://www.cs.cmu.edu/~ILIM/shape_from_heat/" target="_blank"><i class="fas fa-globe"></i> Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2024_theory_teaser_img.png" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://imaging.cs.cmu.edu/joint_light_heat_transport/" target="_blank">A theory of joint light and heat transport for lambertian scenes</a>
+                            </div>
+                            <div class="pub-authors">
+                                <span class="author-me">Mani Ramanagopal</span>, Sriram Narayanan, Aswin C Sankaranarayanan, Srinivasa G Narasimhan
+                            </div>
+                            <div class="pub-venue">
+                                IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2024
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://imaging.cs.cmu.edu/joint_light_heat_transport/static/pdfs/CVPR2024_Light_and_Heat_transport.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <a href="https://imaging.cs.cmu.edu/joint_light_heat_transport/" target="_blank"><i class="fas fa-globe"></i> Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 Publications -->
+                <div class="year-group">
+                    <h3 class="year-heading">2023</h3>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2023_loner_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://umautobots.github.io/loner" target="_blank">LONER: LiDAR Only Neural Representations for Real-Time SLAM</a>
+                            </div>
+                            <div class="pub-authors">
+                                Seth Isaacson, Pou-Chun Kung, <span class="author-me">Mani Ramanagopal</span>, Ram Vasudevan, Katherine A Skinner
+                            </div>
+                            <div class="pub-venue">
+                                IEEE Robotics and Automation Letters (RA-L), 2023 <br/>
+                                <b>IEEE RAL Best Paper Award</b>
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2309.04937" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <a href="https://umautobots.github.io/loner" target="_blank"><i class="fas fa-globe"></i> Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2023_waternerf_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://arxiv.org/pdf/2209.13091" target="_blank">Waternerf: Neural radiance fields for underwater scenes</a>
+                            </div>
+                            <div class="pub-authors">
+                                Advaith Venkatramanan Sethuraman, <span class="author-me">Mani Ramanagopal</span>, Katherine A Skinner
+                            </div>
+                            <div class="pub-venue">
+                                OCEANS 2023-MTS/IEEE US Gulf Coast, 2023
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2209.13091" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <!-- <a href="#" target="_blank"><i class="fas fa-globe"></i> Project</a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2023_cloner_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://arxiv.org/pdf/2209.01194" target="_blank">CLONeR: Camera-Lidar Fusion for Occupancy Grid-Aided Neural Representations</a>
+                            </div>
+                            <div class="pub-authors">
+                                Alexandra Carlson<sup>&dagger;</sup>, <span class="author-me">Mani Ramanagopal<sup>&dagger;</sup></span>, Nathan Tseng, Matthew Johnson-Roberson, Ram Vasudevan, Katherine A Skinner
+                            </div>
+                            <div class="pub-venue">
+                                IEEE Robotics and Automation Letters, 2023
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2209.01194" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <!-- <a href="#" target="_blank"><i class="fas fa-globe"></i> Project</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2020 Publications -->
+                <div class="year-group">
+                    <h3 class="year-heading">2020</h3>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2020_pixelwise_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://fcav.engin.umich.edu/papers/pixelwise-deblurring" target="_blank">Pixel-wise motion deblurring of thermal videos</a>
+                            </div>
+                            <div class="pub-authors">
+                                <span class="author-me">Mani Ramanagopal</span>, Zixu Zhang, Ram Vasudevan, Matthew Johnson-Roberson
+                            </div>
+                            <div class="pub-venue">
+                                Robotics: Science and Systems (RSS), 2020
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2006.04973" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <a href="https://fcav.engin.umich.edu/projects/pixelwise-deblurring" target="_blank"><i class="fas fa-globe"></i> Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2020_listereo_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://arxiv.org/pdf/1905.02744" target="_blank">Listereo: Generate dense depth maps from lidar and stereo imagery</a>
+                            </div>
+                            <div class="pub-authors">
+                                Junming Zhang, <span class="author-me">Mani Ramanagopal</span>, Ram Vasudevan, Matthew Johnson-Roberson
+                            </div>
+                            <div class="pub-venue">
+                                IEEE International Conference on Robotics and Automation (ICRA), 2020
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/1905.02744" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <!-- <a href="#" target="_blank"><i class="fas fa-globe"></i> Project</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2019 Publications -->
+                <div class="year-group">
+                    <h3 class="year-heading">2019</h3>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2019_pedx_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://fcav.engin.umich.edu/projects/pedestrian-perception" target="_blank">Pedx: Benchmark dataset for metric 3-d pose estimation of pedestrians in complex urban intersections</a>
+                            </div>
+                            <div class="pub-authors">
+                                Wonhui Kim, <span class="author-me">Mani Ramanagopal</span>, Charles Barto, Ming-Yuan Yu, Karl Rosaen, Nick Goumas, Ram Vasudevan, Matthew Johnson-Roberson
+                            </div>
+                            <div class="pub-venue">
+                                IEEE Robotics and Automation Letters (RA-L), 2019
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1809.03605" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <a href="https://fcav.engin.umich.edu/projects/pedestrian-perception" target="_blank"><i class="fas fa-globe"></i> Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2018 Publications -->
+                <div class="year-group">
+                    <h3 class="year-heading">2018</h3>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2018_kitti_mosaic_teaser_img.webp" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://fcav.engin.umich.edu/research/failing-to-learn" target="_blank">Failing to learn: Autonomously identifying perception failures for self-driving cars</a>
+                            </div>
+                            <div class="pub-authors">
+                                <span class="author-me">Mani Ramanagopal</span>, Cyrus Anderson, Ram Vasudevan, Matthew Johnson-Roberson
+                            </div>
+                            <div class="pub-venue">
+                                IEEE Robotics and Automation Letters (RA-L), 2018
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/1707.00051" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <a href="https://fcav.engin.umich.edu/research/failing-to-learn" target="_blank"><i class="fas fa-globe"></i> Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2018_target_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/abstract/document/8304800" target="_blank">Toward real-time autonomous target area protection: Theory and implementation</a>
+                            </div>
+                            <div class="pub-authors">
+                                Jitesh Mohanan, <span class="author-me">Mani Ramanagopal</span>, Raghav H Venkatesan, Bharath Bhikkaji
+                            </div>
+                            <div class="pub-venue">
+                                IEEE Transactions on Control Systems Technology, 2018
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://ieeexplore.ieee.org/abstract/document/8304800" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <!-- <a href="#" target="_blank"><i class="fas fa-globe"></i> Project</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2017 Publications -->
+                <div class="year-group">
+                    <h3 class="year-heading">2017</h3>
+
+                    <div class="publication-card">
+                        <img src="static/publication_assets/2017_motion_planning_teaser_img.jpg" alt="Publication thumbnail" class="pub-thumbnail">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://arxiv.org/pdf/1602.06667" target="_blank">A Motion Planning Strategy for the Active Vision-Based Mapping of Ground-Level Structures</a>
+                            </div>
+                            <div class="pub-authors">
+                                <span class="author-me">Mani Ramanagopal</span>, Andre Phu-Van Nguyen, Jerome Le Ny
+                            </div>
+                            <div class="pub-venue">
+                                IEEE Transactions on Automation Science and Engineering, 2017
+                            </div>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/1602.06667" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <!-- <a href="#" target="_blank"><i class="fas fa-globe"></i> Project</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Footer -->
