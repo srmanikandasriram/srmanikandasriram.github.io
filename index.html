@@ -3,11 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M·A·R·V·I·L·S | Landing Page</title>
+    <title>M·A·R·V·I·L·S</title>
+    <meta name="description" content="Explore cutting-edge research in thermal computational imaging, heat-based vision systems, and novel sensing technologies by Mani Ramanagopal.">
+    <meta name="keywords" content="thermal imaging, computational imaging, computer vision, heat transfer, robotics, autonomous vehicles, sensing, novel sensors">
+    <meta name="author" content="Mani Ramanagopal">
+    <link rel="canonical" href="https://marvils.org/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marvils.org/">
+    <meta property="og:title" content="M·A·R·V·I·L·S">
+    <meta property="og:description" content="Explore cutting-edge research in thermal computational imaging and heat-based vision systems.">
+    <meta property="og:image" content="https://marvils.org/static/imgs/M_logo.jpeg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://marvils.org/">
+    <meta name="twitter:title" content="M·A·R·V·I·L·S">
+    <meta name="twitter:description" content="Explore cutting-edge research in thermal computational imaging and heat-based vision systems.">
+    <meta name="twitter:image" content="https://marvils.org/static/imgs/M_logo.jpeg">
+    
     <link rel="icon" type="image/jpeg" href="static/imgs/M_logo.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ResearchProject",
+      "name": "M·A·R·V·I·L·S",
+      "description": "Mani Ramanagopal's research lab focusing on thermal computational imaging, heat-based vision systems, and novel sensing technologies.",
+      "url": "https://marvils.org/",
+      "author": {
+        "@type": "Person",
+        "name": "Mani Ramanagopal",
+        "jobTitle": "Project Scientist",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Carnegie Mellon University",
+          "url": "https://www.cmu.edu/"
+        },
+        "url": "https://marvils.org/mani.html",
+        "sameAs": [
+          "https://www.linkedin.com/in/maniramanagopal/",
+          "https://scholar.google.com/citations?user=46v2zoYAAAAJ"
+        ]
+      }
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -401,69 +446,65 @@
     <div class="container">
         <!-- Header Section -->
         <header class="header-section">
-            <img src="static/imgs/M_logo.jpeg" alt="M.A.R.V.I.L.S Logo" class="logo">
+            <img src="static/imgs/M_logo.jpeg" alt="M·A·R·V·I·L·S Lab Logo" class="logo" loading="eager">
             <h1 class="site-title">M·A·R·V·I·L·S</h1>
-            <!-- <p class="site-subtitle">Machine-Assisted Research for Visual Intelligence and Learning Systems</p> -->
         </header>
 
         <!-- Navigation Links -->
-        <nav class="nav-section">
-            <a href="mani.html" class="nav-card">
-                <img src="static/imgs/profile.jpg" alt="Mani's Profile" class="profile-img">
+        <nav class="nav-section" role="navigation" aria-label="Main navigation">
+            <a href="mani.html" class="nav-card" aria-label="View Mani Ramanagopal's profile">
+                <img src="static/imgs/profile.jpg" alt="Mani Ramanagopal - Project Scientist at CMU" class="profile-img" loading="lazy">
             </a>
 
-            <a href="vibe.html" class="nav-card">
+            <a href="vibe.html" class="nav-card" aria-label="Research statement">
                 <div class="nav-icon"></div>
-                <h3 class="nav-title">Research Statement</h3>
-                <!-- <p class="nav-description">Vision-By-Energetics research project and findings</p> -->
+                <h2 class="nav-title">Research Statement</h2>
             </a>
 
-            <a href="learn.html" class="nav-card">
+            <a href="learn.html" class="nav-card" aria-label="Teaching statement">
                 <div class="nav-icon"></div>
-                <h3 class="nav-title">Teaching Statement</h3>
-                <!-- <p class="nav-description">Educational resources and learning materials</p> -->
+                <h2 class="nav-title">Teaching Statement</h2>
             </a>
 
-            <a href="courses.html" class="nav-card">
+            <a href="courses.html" class="nav-card" aria-label="View new courses">
                 <div class="nav-icon"></div>
-                <h3 class="nav-title">New Courses</h3>
-                <!-- <p class="nav-description">Academic courses and teaching materials</p> -->
+                <h2 class="nav-title">New Courses</h2>
             </a>
         </nav>
 
         <!-- Carousel Section -->
-        <section class="carousel-section">
+        <section class="carousel-section" aria-label="Highlights">
             <div class="carousel-container">
-                <div class="carousel-wrapper">
+                <div class="carousel-wrapper" role="region" aria-live="polite" aria-atomic="true">
                     <div class="carousel-slide active" data-caption="Future M·A·R·V·I·L·S Lab">
-                        <img src="static/imgs/lab_layout.png" alt="Lab Layout">
+                        <img src="static/imgs/lab_layout.png" alt="Future M·A·R·V·I·L·S Lab layout and design" loading="lazy">
                     </div>
                     <div class="carousel-slide" data-caption="SIGGRAPH Asia 2025 Course">
                         <a href="https://sa2025.conference-schedule.org/presentation/?id=crs_107&sess=sess235" target="_blank" rel="noopener noreferrer">
-                            <img src="static/imgs/sigasia_course_teaser_img.jpg" alt="SIGGRAPH Asia 2025 Course">
+                            <img src="static/imgs/sigasia_course_teaser_img.jpg" alt="SIGGRAPH Asia 2025 Course - Vision, Imaging, and Simulation for Heat and Light" loading="lazy">
                         </a>
                     </div>
                     <div class="carousel-slide" data-caption="Vision with Heat and Light">
                         <a href="https://imaging.cs.cmu.edu/vision-with-heat-and-light/" target="_blank" rel="noopener noreferrer">
-                            <img src="static/imgs/vision_with_light_and_heat_teaser.jpg" alt="Vision with Heat and Light">
+                            <img src="static/imgs/vision_with_light_and_heat_teaser.jpg" alt="Vision with Heat and Light - Research project on thermal imaging" loading="lazy">
                         </a>
                     </div>
                 </div>
 
                 <!-- Navigation Arrows -->
-                <button class="carousel-arrow prev" onclick="changeSlide(-1)">‹</button>
-                <button class="carousel-arrow next" onclick="changeSlide(1)">›</button>
+                <button class="carousel-arrow prev" onclick="changeSlide(-1)" aria-label="Previous slide">‹</button>
+                <button class="carousel-arrow next" onclick="changeSlide(1)" aria-label="Next slide">›</button>
 
                 <!-- Dots Navigation -->
-                <div class="carousel-nav">
-                    <div class="carousel-dot active" onclick="currentSlide(1)"></div>
-                    <div class="carousel-dot" onclick="currentSlide(2)"></div>
-                    <div class="carousel-dot" onclick="currentSlide(3)"></div>
+                <div class="carousel-nav" role="tablist" aria-label="Carousel navigation">
+                    <div class="carousel-dot active" onclick="currentSlide(1)" role="tab" aria-label="Slide 1" aria-selected="true"></div>
+                    <div class="carousel-dot" onclick="currentSlide(2)" role="tab" aria-label="Slide 2" aria-selected="false"></div>
+                    <div class="carousel-dot" onclick="currentSlide(3)" role="tab" aria-label="Slide 3" aria-selected="false"></div>
                 </div>
             </div>
             
             <!-- Caption below carousel -->
-            <div class="carousel-caption" id="carouselCaption">Future M·A·R·V·I·L·S Lab</div>
+            <div class="carousel-caption" id="carouselCaption" aria-live="polite">Future M·A·R·V·I·L·S Lab</div>
         </section>
 
         <!-- Footer -->
@@ -482,11 +523,15 @@
         function showSlide(index) {
             // Remove active class from all slides and dots
             slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
+            dots.forEach((dot, i) => {
+                dot.classList.remove('active');
+                dot.setAttribute('aria-selected', 'false');
+            });
 
             // Add active class to current slide and dot
             slides[index].classList.add('active');
             dots[index].classList.add('active');
+            dots[index].setAttribute('aria-selected', 'true');
             
             // Update caption
             const caption = slides[index].getAttribute('data-caption');

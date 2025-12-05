@@ -1,0 +1,16 @@
+# robots.txt for https://marvils.org/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://marvils.org/sitemap.xml
+
+# Disallow crawling of development files
+Disallow: /index_wip.html
+Disallow: /index_new.html
+Disallow: /index_backup.html
+Disallow: /*.md$
+
+# Allow crawling of static assets
+Allow: /static/
