@@ -3,171 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M·A·R·V·I·L·S - Launching Soon</title>
-    <link rel="icon" type="image/x-icon" href="static/imgs/M_logo.jpeg">
+    <title>Teaching Statement | M·A·R·V·I·L·S</title>
+    <meta name="description" content="Teaching philosophy and approach for thermal computational imaging and computer vision courses at M·A·R·V·I·L·S - Multiphysics Adaptive Reasoning of Visible and Infrared through Learning for Science.">
+    <meta name="keywords" content="teaching, education, MARVILS, multiphysics, thermal imaging, computational imaging, computer vision, courses, CMU, infrared sensing">
+    <meta name="author" content="Mani Ramanagopal">
+    <link rel="canonical" href="https://marvils.org/learn.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marvils.org/learn.html">
+    <meta property="og:title" content="Teaching Statement | M·A·R·V·I·L·S">
+    <meta property="og:description" content="Teaching philosophy and approach for thermal computational imaging courses.">
+    <meta property="og:image" content="https://marvils.org/static/imgs/M_logo.jpeg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://marvils.org/learn.html">
+    <meta name="twitter:title" content="Teaching Statement | M·A·R·V·I·L·S">
+    <meta name="twitter:description" content="Teaching philosophy and approach for thermal computational imaging courses.">
+    <meta name="twitter:image" content="https://marvils.org/static/imgs/M_logo.jpeg">
+    
+    <link rel="icon" type="image/jpeg" href="static/imgs/M_logo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background: #f5f5f5;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
             color: #333;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        
-        .container {
-            max-width: 600px;
-            padding: 2rem;
-        }
-        
-        .logo {
-            width: 180px;
-            height: 180px;
-            border-radius: 12px;
-            margin: 0 auto 3rem;
-            display: block;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: 8px;
-            font-weight: 300;
-            color: #222;
-        }
-        
-        .countdown-container {
-            background: white;
-            padding: 3rem 2rem;
-            border-radius: 8px;
-            margin-top: 3rem;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .countdown-container h2 {
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            color: #666;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 400;
-        }
-        
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        
-        .time-unit {
-            padding: 1rem 0;
-            min-width: 80px;
-        }
-        
-        .time-value {
-            font-size: 3.5rem;
-            font-weight: 200;
-            display: block;
-            line-height: 1;
-            color: #000;
-        }
-        
-        .time-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: #999;
-            margin-top: 0.5rem;
-            letter-spacing: 2px;
-            font-weight: 400;
         }
 
-        @media (max-width: 600px) {
-            .logo {
-                width: 150px;
-                height: 150px;
+        /* Navigation Bar */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: #1e293b;
+        }
+
+        .nav-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+        }
+
+        .nav-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #1e293b;
+        }
+
+        .nav-links a.active {
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #1e293b;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #1e293b;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        /* Download Button */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 30px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .download-btn i {
+            font-size: 1.3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 15px;
+                font-size: 0.9rem;
             }
-            
+
+            .nav-title {
+                font-size: 1.2rem;
+            }
+
+            .nav-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            .content-section {
+                padding: 30px 20px;
+            }
+
             h1 {
                 font-size: 2rem;
             }
-            
-            .time-value {
-                font-size: 2rem;
+
+            h2 {
+                font-size: 1.5rem;
             }
-            
-            .time-unit {
-                min-width: 70px;
-                padding: 1rem 0.5rem;
+
+            h3 {
+                font-size: 1.2rem;
             }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 10px;
+                font-size: 0.8rem;
+            }
+
+            .nav-title {
+                display: none;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 60px;
+            padding: 20px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #000;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="static/imgs/M_logo.jpeg" alt="MARVILS Logo" class="logo">
-        <h1>M·A·R·V·I·L·S</h1>
-        
-        <div class="countdown-container">
-            <h2>Website Launching In</h2>
-            <div class="countdown">
-                <div class="time-unit">
-                    <span class="time-value" id="days">0</span>
-                    <span class="time-label">Days</span>
-                </div>
-                <div class="time-unit">
-                    <span class="time-value" id="hours">0</span>
-                    <span class="time-label">Hours</span>
-                </div>
-                <div class="time-unit">
-                    <span class="time-value" id="minutes">0</span>
-                    <span class="time-label">Minutes</span>
-                </div>
-                <div class="time-unit">
-                    <span class="time-value" id="seconds">0</span>
-                    <span class="time-label">Seconds</span>
-                </div>
-            </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand" aria-label="M·A·R·V·I·L·S home">
+                <img src="static/imgs/M_logo.jpeg" alt="M·A·R·V·I·L·S Lab Logo" class="nav-logo" loading="eager">
+                <span class="nav-title">M·A·R·V·I·L·S</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="mani.html">Profile</a></li>
+                <li><a href="vibe.html">Research</a></li>
+                <li><a href="learn.html" class="active" aria-current="page">Teaching</a></li>
+                <li><a href="courses.html">Courses</a></li>
+            </ul>
         </div>
-    </div>
+    </nav>
 
-    <script>
-        // Set launch date to December 6, 2025 at midnight
-        const launchDate = new Date('December 6, 2025 00:00:00').getTime();
+    <!-- Main Content -->
+    <main class="container">
+        <article class="content-section">
+            <h1>Teaching Statement</h1>
+            
+            <a href="static/Mani_teaching_statement_Nov25.pdf" target="_blank" rel="noopener noreferrer" class="download-btn" aria-label="Download teaching statement PDF">
+                <i class="fas fa-file-pdf"></i>
+                Teaching Statement
+            </a>
+            
+            <p style="background: #f1f5f9; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea; margin-top: 30px;">
+                <i class="fas fa-info-circle" style="color: #667eea; margin-right: 8px;"></i>
+                <strong>Coming Soon:</strong> A visual, interactive version of the teaching statement is currently in the works. Stay tuned!
+            </p>
+            
+        </article>
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = launchDate - now;
-
-            // Calculate time units
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Update the display
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
-
-            // If countdown is finished, redirect or show message
-            if (distance < 0) {
-                window.location.href = 'index_backup.html';
-            }
-        }
-
-        // Update countdown immediately and then every second
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-    </script>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Website built by Mani 🧠 + <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">Copilot</a> 💪</p>
+        </footer>
+    </main>
 </body>
 </html>

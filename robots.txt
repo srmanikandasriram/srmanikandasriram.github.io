@@ -12,5 +12,9 @@ Disallow: /index_new.html
 Disallow: /index_backup.html
 Disallow: /*.md$
 
-# Allow crawling of static assets
+# Disallow crawling of PDF files
+Disallow: /*.pdf$
+Disallow: /static/*.pdf
+
+# Allow crawling of static assets (except PDFs)
 Allow: /static/
